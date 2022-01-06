@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">DigiLedger</string>
+    <string name="bill_amount">Bill Amount</string>
+    <string name="number_of_notes">Number of notes</string>
+    <string name="enter_the_denominations">Enter the denominations received:</string>
+    <string name="calculate_button">Calculate</string>
+    <string name="rs_ten">Rs 10 notes</string>
+    <string name="rs_twenty">Rs 20 notes</string>
+    <string name="rs_fifty">Rs 50 notes</string>
+    <string name="rs_hundred">Rs 100 notes</string>
+    <string name="ten_rupees">10 Rupees</string>
+    <string name="twenty_rupees">20 Rupees</string>
+    <string name="fifty_rupees">50 Rupees</string>
+    <string name="hundred_rupees">100 Rupees</string>
+    <string name="new_transaction">New Transaction</string>
+    <string name="transaction_details">TRANSACTION DETAILS</string>
+    <string name="customer_name">Mr./Mrs. %s</string>
+    <string name="final_bill">Rs. %s</string>
+    <string name="cash_received">Rs. %s</string>
+    <string name="change">Rs. %s</string>
+    <string name="details">Details coming right up!</string>
+    <string name="customer_full_name">Customer Name:</string>
+    <string name="entered_bill_amount">Bill Amount:</string>
+    <string name="amount_received">Amount Received:</string>
+    <string name="change_to_return">Change to Return:</string>
+    <string name="input_customer_name">Customer Name</string>
+    <string name="about_us">About Us</string>
+    <string name="amount_left">Amount Left:</string>
+</resources>

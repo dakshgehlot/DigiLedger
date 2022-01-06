@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/transaction_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:fontFamily="cursive"
+        android:text="@string/transaction_details"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cust_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:text="@string/customer_full_name"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/transaction_details"
+        app:layout_constraintTop_toBottomOf="@+id/transaction_details" />
+
+    <TextView
+        android:id="@+id/cust_name_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:text=""
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/transaction_details"
+        app:layout_constraintTop_toBottomOf="@+id/transaction_details"
+        tools:text="Customer Name" />
+
+    <TextView
+        android:id="@+id/final_bill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="@string/entered_bill_amount"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/transaction_details"
+        app:layout_constraintTop_toBottomOf="@+id/cust_name" />
+
+    <TextView
+        android:id="@+id/cash_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="@string/amount_received"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/transaction_details"
+        app:layout_constraintTop_toBottomOf="@+id/final_bill" />
+
+    <TextView
+        android:id="@+id/final_bill_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text=""
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/transaction_details"
+        app:layout_constraintTop_toBottomOf="@+id/cust_name_edit_text"
+        tools:text="Bill Amount" />
+
+    <TextView
+        android:id="@+id/cash_received_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text=""
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/transaction_details"
+        app:layout_constraintTop_toBottomOf="@+id/final_bill_edit_text"
+        tools:text="Amount Received" />
+
+    <TextView
+        android:id="@+id/return_to_give"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="@string/change_to_return"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/transaction_details"
+        app:layout_constraintTop_toBottomOf="@+id/cash_received" />
+
+    <TextView
+        android:id="@+id/return_to_give_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text=""
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/transaction_details"
+        app:layout_constraintTop_toBottomOf="@id/cash_received_edit_text"
+        tools:text="Change to Return" />
+</androidx.constraintlayout.widget.ConstraintLayout>
