@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TransactionFragment">
+
+    <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            tools:context=".Transaction">
+
+            <ImageView
+                android:id="@+id/icon_cost_of_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                android:paddingTop="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/cost_of_service"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cost_of_service"
+                app:srcCompat="@drawable/total_bill_icon"
+                tools:layout_editor_absoluteY="91dp" />
+
+            <ImageView
+                android:id="@+id/icon_name_customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                android:paddingTop="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/customer_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/customer_name"
+                app:srcCompat="@drawable/icon_customer"
+                tools:layout_editor_absoluteY="91dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/customer_name"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:hint="@string/input_customer_name"
+                android:paddingTop="16dp"
+                app:layout_constraintStart_toEndOf="@id/icon_name_customer"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/customer_name_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cost_of_service"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="128dp"
+                android:hint="@string/bill_amount"
+                android:paddingTop="16dp"
+                app:layout_constraintStart_toEndOf="@id/icon_cost_of_service"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bill_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/enter_denomination"
+                style="@style/Widget.DigiLedger.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/adamina"
+                android:text="@string/enter_the_denominations"
+                app:layout_constraintStart_toStartOf="@id/icon_cost_of_service"
+                app:layout_constraintTop_toBottomOf="@id/cost_of_service" />
+
+            <ImageView
+                android:id="@+id/rs_ten"
+                android:layout_width="201dp"
+                android:layout_height="82dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                app:layout_constraintStart_toStartOf="@id/icon_cost_of_service"
+                app:layout_constraintTop_toBottomOf="@id/enter_denomination"
+                app:srcCompat="@drawable/ten_rs_note"
+                android:contentDescription="@string/ten_rupees" />
+
+            <ImageView
+                android:id="@+id/rs_twenty"
+                android:layout_width="201dp"
+                android:layout_height="82dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                app:layout_constraintStart_toStartOf="@id/icon_cost_of_service"
+                app:layout_constraintTop_toBottomOf="@id/rs_ten"
+                app:srcCompat="@drawable/twenty_rs_note"
+                android:contentDescription="@string/twenty_rupees" />
+
+            <ImageView
+                android:id="@+id/rs_fifty"
+                android:layout_width="201dp"
+                android:layout_height="82dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="@id/icon_cost_of_service"
+                app:layout_constraintTop_toBottomOf="@id/rs_twenty"
+                app:srcCompat="@drawable/fifty_rs_note"
+                android:contentDescription="@string/fifty_rupees" />
+
+            <ImageView
+                android:id="@+id/rs_hundred"
+                android:layout_width="230dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="@id/icon_cost_of_service"
+                app:layout_constraintTop_toBottomOf="@id/rs_fifty"
+                app:srcCompat="@drawable/hundred_rs_note"
+                android:contentDescription="@string/hundred_rupees" />
+
+            <Button
+                android:id="@+id/calculate_button"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/calculate_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rs_hundred" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_icon_ten"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+
+                app:layout_constraintBottom_toBottomOf="@id/rs_ten"
+                app:layout_constraintStart_toEndOf="@id/rs_ten"
+                app:layout_constraintTop_toTopOf="@id/rs_ten">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/rs_ten_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_icon_twenty"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+
+                app:layout_constraintBottom_toBottomOf="@id/rs_twenty"
+                app:layout_constraintStart_toEndOf="@id/rs_twenty"
+                app:layout_constraintTop_toTopOf="@id/rs_twenty">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/rs_twenty_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_icon_fifty"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+
+                app:layout_constraintBottom_toBottomOf="@id/rs_fifty"
+                app:layout_constraintStart_toEndOf="@id/rs_fifty"
+                app:layout_constraintTop_toTopOf="@id/rs_fifty">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/rs_fifty_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_icon_hundred"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+
+                app:layout_constraintBottom_toBottomOf="@id/rs_hundred"
+                app:layout_constraintStart_toEndOf="@id/rs_hundred"
+                app:layout_constraintTop_toTopOf="@id/rs_hundred">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/rs_hundred_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+
+</FrameLayout>

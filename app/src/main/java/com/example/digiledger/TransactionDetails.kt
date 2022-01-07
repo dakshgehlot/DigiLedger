@@ -51,7 +51,7 @@ class TransactionDetails: AppCompatActivity(){
             binding.returnToGive.text = getString(R.string.change_to_return)
             binding.returnToGiveEditText.text = getString(R.string.change, changeString)
         }
-
     }
+
 
 }

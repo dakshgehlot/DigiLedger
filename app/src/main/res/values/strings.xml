@@ -26,4 +26,7 @@
     <string name="input_customer_name">Customer Name</string>
     <string name="about_us">About Us</string>
     <string name="amount_left">Amount Left:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="transaction_history">Transaction History</string>
 </resources>

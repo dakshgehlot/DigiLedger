@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.example.digiledger.TransactionFragment"
+        android:label="New Transaction"
+        tools:layout="@layout/fragment_transaction">
+        <action
+            android:id="@+id/action_transactionFragment_to_transactionDetailsFragment"
+            app:destination="@id/transactionDetailsFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/transactionDetailsFragment"
+        android:name="com.example.digiledger.TransactionDetailsFragment"
+        android:label="Transaction Details"
+        tools:layout="@layout/fragment_transaction_details" >
+        <argument
+            android:name="custName"
+            app:argType="string" />
+        <argument
+            android:name="billAmount"
+            app:argType="integer" />
+        <argument
+            android:name="amtReceived"
+            app:argType="integer" />
+        <argument
+            android:name="change"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_transactionDetailsFragment_to_previousTransactionsFragment"
+            app:destination="@id/previousTransactionsFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/previousTransactionsFragment"
+        android:name="com.example.digiledger.PreviousTransactionsFragment"
+        android:label="Previous Transactions"
+        tools:layout="@layout/fragment_previous_transactions" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.digiledger.MainFragment"
+        android:label="DigiLedger"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_previousTransactionsFragment"
+            app:destination="@id/previousTransactionsFragment"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_mainFragment_to_aboutUs"
+            app:destination="@id/aboutUs"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUs"
+        android:name="com.example.digiledger.AboutUs"
+        android:label="Never Gonna Give You Up"
+        tools:layout="@layout/fragment_about_us" />
+</navigation>
