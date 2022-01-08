@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(entities = [PreviousTransactionRecords::class], version = 1, exportSchema = false)
 abstract class PreviousTransactionsDatabase: RoomDatabase() {
+
     abstract fun previousTransactionDao(): PreviousTransactionRecordsDao
 
     companion object{
@@ -22,7 +23,7 @@ abstract class PreviousTransactionsDatabase: RoomDatabase() {
                     .fallbackToDestructiveMigration()
                     .build()
                 INSTANCE = instance
-                return instance
+                instance
             }
         }
     }

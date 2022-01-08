@@ -46,7 +46,15 @@
         android:id="@+id/previousTransactionsFragment"
         android:name="com.example.digiledger.PreviousTransactionsFragment"
         android:label="Previous Transactions"
-        tools:layout="@layout/fragment_previous_transactions" />
+        tools:layout="@layout/fragment_previous_transactions" >
+        <action
+            android:id="@+id/action_previousTransactionsFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.digiledger.MainFragment"

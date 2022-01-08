@@ -26,7 +26,29 @@
     <string name="input_customer_name">Customer Name</string>
     <string name="about_us">About Us</string>
     <string name="amount_left">Amount Left:</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="transaction_history">Transaction History</string>
+    <string name="customer_id">Customer ID</string>
+    <string name="name">Name</string>
+    <string name="save_details">Save Details</string>
+    <string name="the_codebreakers">THE CODEBREAKERS</string>
+    <string name="digiledger">\"DigiLedger\"</string>
+
+    <string name="about_us_paragraph">Inspired by the famous words of Rick Astley (you know what
+        we\'re talking about), we came up with an idea to create an app that\'ll never give up on
+        people.\n\n\"Digiledger\" was designed keeping in mind a good social aim - to create an app
+        with an intuitive and straightforward user interface (UI) that helps people keep track of
+        simple day to day transactions.\n\n
+
+        Our team:\n
+        1) Daksh Gehlot\n
+        2) Prathmesh Badgujar\n
+        3) Pakhi Gupta\n
+        4) Varsha Poswalia\n\nWe see stalls and small shops everywhere. These people may not be as
+        educated about keeping a ledger as we are. The app we developed, helps them to properly
+        calculate and manage their transactions. This is just the first build of the app, many more
+        features are yet to come.\n\nSpecial thanks to "Fanda" and GDSC Shirpur for providing us the
+        opportunity to develop
+    </string>
+
 </resources>

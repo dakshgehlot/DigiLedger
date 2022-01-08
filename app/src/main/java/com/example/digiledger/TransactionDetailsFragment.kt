@@ -1,13 +1,18 @@
 package com.example.digiledger
 
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListAdapter
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.example.digiledger.data.PreviousTransactionRecords
 import com.example.digiledger.databinding.FragmentTransactionDetailsBinding
 import kotlin.math.absoluteValue
 
@@ -17,26 +22,41 @@ class TransactionDetailsFragment : Fragment(), View.OnClickListener {
     private var _binding: FragmentTransactionDetailsBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var viewModel: PreviousTransactionViewModel
+
 //    private val viewModel: PreviousTransactionViewModel by activityViewModels {
 //        PreviousTransactionFactory(
 //            (activity?.application as TransactionDatabaseInstance).database.previousTransactionDao()
 //        )
 //    }
 
+    lateinit var previousTransactionRecords: PreviousTransactionRecords
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentTransactionDetailsBinding.inflate(inflater, container, false)
 
+        _binding = FragmentTransactionDetailsBinding.inflate(inflater, container, false)
 
         val bill = arguments?.getInt("billAmount")!!
         val amtReceived = arguments?.getInt("amountReceived")!!
         val giveback = arguments?.getInt("change")!!
         val custName = arguments?.getString("custName").toString()
 
+        viewModel = ViewModelProvider(this)[PreviousTransactionViewModel::class.java]
+
         putData(bill, amtReceived, giveback, custName)
+
+        binding.saveToDb.setOnClickListener {
+            if(bill == 0){
+                Toast.makeText(this.activity, "Enter Bill Amount!", Toast.LENGTH_SHORT).show()
+            } else {
+                insertRecordToDB(custName, bill)
+                Toast.makeText(this.activity, "Details Saved!", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         return binding.root
     }
@@ -66,16 +86,12 @@ class TransactionDetailsFragment : Fragment(), View.OnClickListener {
             binding.returnToGive.text = getString(R.string.change_to_return)
             binding.returnToGiveEditText.text = getString(R.string.change, changeString)
         }
-
-//        addNewRecords()
     }
 
-//    private fun addNewRecords(){
-//        viewModel.addNewRecord(
-//            binding.custNameEditText.text.toString(),
-//            binding.finalBillEditText.text.toString().toDouble(),
-//        )
-//    }
+    private fun insertRecordToDB(CUSTOMER: String?, BILL: Int){
+        val record = PreviousTransactionRecords(0, CUSTOMER!!, Integer.parseInt(BILL.toString()))
+        viewModel.addRecord(record)
+    }
 
     override fun onClick(v: View?) {
         when(v!!.id){
@@ -89,7 +105,5 @@ class TransactionDetailsFragment : Fragment(), View.OnClickListener {
         super.onDestroyView()
         _binding = null
     }
-
-
 }
 
