@@ -11,10 +11,11 @@
     <TextView
         android:id="@+id/record_id"
         style="@style/Widget.Digiledger.ListItemTextView"
-        android:layout_width="180dp"
-        android:layout_marginStart="@dimen/margin_between_elements"
+        android:layout_width="90dp"
         android:fontFamily="sans-serif"
+        android:textAlignment="textStart"
         app:layout_constraintEnd_toStartOf="@id/record_customer"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="ID: 1" />
@@ -22,14 +23,13 @@
     <TextView
         android:id="@+id/record_customer"
         style="@style/Widget.Digiledger.ListItemTextView"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_below="@id/record_id"
-        android:layout_marginStart="@dimen/margin_between_elements"
+        android:layout_marginEnd="23dp"
         android:fontFamily="sans-serif-medium"
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@id/record_bill"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@id/record_id"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Rick Astley" />
 
@@ -38,9 +38,9 @@
         style="@style/Widget.Digiledger.ListItemTextView"
         android:layout_width="80dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="@dimen/margin_between_elements"
+        android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-medium"
-        android:textAlignment="center"
+        android:textAlignment="textEnd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintTop_toTopOf="parent"

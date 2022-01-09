@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import java.text.NumberFormat
 
 @Entity(tableName = "transaction_history")
-data class PreviousTransactionRecords (     // item class
+data class PreviousTransactionRecords(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     @ColumnInfo(name = "name")

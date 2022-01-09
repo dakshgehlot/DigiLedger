@@ -6,7 +6,7 @@ class PreviousTransactionRepository(private val previousTransactionRecordsDao: P
 
     val getAll: LiveData<List<PreviousTransactionRecords>> = previousTransactionRecordsDao.getAll()
 
-    suspend fun addRecord(previousTransactionRecords: PreviousTransactionRecords){
+    suspend fun addRecord(previousTransactionRecords: PreviousTransactionRecords) {
         previousTransactionRecordsDao.insert(previousTransactionRecords)
     }
 

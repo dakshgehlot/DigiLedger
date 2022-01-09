@@ -9,7 +9,6 @@ import android.widget.Button
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.digiledger.databinding.FragmentMainBinding
-import com.example.digiledger.databinding.FragmentTransactionDetailsBinding
 
 class MainFragment : Fragment(), View.OnClickListener {
 
@@ -29,18 +28,16 @@ class MainFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
-        view.findViewById<Button>(R.id.new_transaction).setOnClickListener (this)
-        view.findViewById<Button>(R.id.transaction_history).setOnClickListener (this)
-        view.findViewById<Button>(R.id.about_us_button).setOnClickListener (this)
+        view.findViewById<Button>(R.id.new_transaction).setOnClickListener(this)
+        view.findViewById<Button>(R.id.transaction_history).setOnClickListener(this)
+        view.findViewById<Button>(R.id.about_us_button).setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-        when (v!!.id){
+        when (v!!.id) {
             R.id.new_transaction -> navController?.navigate(R.id.action_mainFragment_to_transactionFragment)
             R.id.transaction_history -> navController?.navigate(R.id.action_mainFragment_to_previousTransactionsFragment)
             R.id.about_us_button -> navController?.navigate(R.id.action_mainFragment_to_aboutUs)
         }
     }
-
-
 }

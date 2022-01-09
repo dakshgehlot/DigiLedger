@@ -1,14 +1,11 @@
 package com.example.digiledger
 
 import android.os.Bundle
-import android.text.TextUtils
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListAdapter
 import android.widget.Toast
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -23,14 +20,6 @@ class TransactionDetailsFragment : Fragment(), View.OnClickListener {
     private val binding get() = _binding!!
 
     private lateinit var viewModel: PreviousTransactionViewModel
-
-//    private val viewModel: PreviousTransactionViewModel by activityViewModels {
-//        PreviousTransactionFactory(
-//            (activity?.application as TransactionDatabaseInstance).database.previousTransactionDao()
-//        )
-//    }
-
-    lateinit var previousTransactionRecords: PreviousTransactionRecords
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,7 +39,7 @@ class TransactionDetailsFragment : Fragment(), View.OnClickListener {
         putData(bill, amtReceived, giveback, custName)
 
         binding.saveToDb.setOnClickListener {
-            if(bill == 0){
+            if (bill == 0) {
                 Toast.makeText(this.activity, "Enter Bill Amount!", Toast.LENGTH_SHORT).show()
             } else {
                 insertRecordToDB(custName, bill)
@@ -64,37 +53,40 @@ class TransactionDetailsFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
-        binding.detailsToHistoryButton.setOnClickListener (this)
+        binding.detailsToHistoryButton.setOnClickListener(this)
     }
 
-    private fun putData(BILL: Int, AMTRECEIVED: Int, CHANGE: Int, CUSTOMER: String?){
+    private fun putData(BILL: Int, AMTRECEIVED: Int, CHANGE: Int, CUSTOMER: String?) {
         val billString = BILL.toString()
         val amtReceivedString = AMTRECEIVED.toString()
 
-        binding.custNameEditText.text = getString(R.string.customer_name, CUSTOMER)
-        binding.finalBillEditText.text = getString(R.string.final_bill, billString)
-        binding.cashReceivedEditText.text = getString(R.string.cash_received, amtReceivedString )
+        when(CUSTOMER){
+            "-N/A-" -> binding.custNameEditText.text = CUSTOMER
+            else -> binding.custNameEditText.text = getString(R.string.customer_name, CUSTOMER)
+        }
 
-        if(CHANGE < 0){
+        binding.finalBillEditText.text = getString(R.string.final_bill, billString)
+        binding.cashReceivedEditText.text = getString(R.string.cash_received, amtReceivedString)
+
+        if (CHANGE < 0) {
             val positiveValue = CHANGE.absoluteValue
             val changeString = positiveValue.toString()
             binding.returnToGive.text = getString(R.string.amount_left)
             binding.returnToGiveEditText.text = getString(R.string.change, changeString)
-        }
-        else{
+        } else {
             val changeString = CHANGE.toString()
             binding.returnToGive.text = getString(R.string.change_to_return)
             binding.returnToGiveEditText.text = getString(R.string.change, changeString)
         }
     }
 
-    private fun insertRecordToDB(CUSTOMER: String?, BILL: Int){
+    private fun insertRecordToDB(CUSTOMER: String?, BILL: Int) {
         val record = PreviousTransactionRecords(0, CUSTOMER!!, Integer.parseInt(BILL.toString()))
         viewModel.addRecord(record)
     }
 
     override fun onClick(v: View?) {
-        when(v!!.id){
+        when (v!!.id) {
             R.id.details_to_history_button -> {
                 navController!!.navigate(R.id.action_transactionDetailsFragment_to_previousTransactionsFragment)
             }

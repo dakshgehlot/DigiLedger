@@ -14,7 +14,7 @@
     <string name="hundred_rupees">100 Rupees</string>
     <string name="new_transaction">New Transaction</string>
     <string name="transaction_details">TRANSACTION DETAILS</string>
-    <string name="customer_name">Mr./Mrs. %s</string>
+    <string name="customer_name">%s</string>
     <string name="final_bill">Rs. %s</string>
     <string name="cash_received">Rs. %s</string>
     <string name="change">Rs. %s</string>
@@ -33,6 +33,7 @@
     <string name="save_details">Save Details</string>
     <string name="the_codebreakers">THE CODEBREAKERS</string>
     <string name="digiledger">\"DigiLedger\"</string>
+    <string name="na">-N/A-</string>
 
     <string name="about_us_paragraph">Inspired by the famous words of Rick Astley (you know what
         we\'re talking about), we came up with an idea to create an app that\'ll never give up on
