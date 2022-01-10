@@ -37,11 +37,9 @@
 
     <string name="about_us_paragraph">Inspired by the famous words of Rick Astley (you know what
         we\'re talking about), we came up with an idea to create an app that\'ll never give up on
-        people.\n\n\"Digiledger\" was designed keeping in mind a good social aim - to create an app
+        people.\n\n\"Digiledger\" was designed keeping in mind a good social aim - to make an app
         with an intuitive and straightforward user interface (UI) that helps people keep track of
-        simple day to day transactions.\n\n
-
-        Our team:\n
+        simple day to day transactions.\n\nOur team:\n
         1) Daksh Gehlot\n
         2) Prathmesh Badgujar\n
         3) Pakhi Gupta\n
@@ -51,5 +49,6 @@
         features are yet to come.\n\nSpecial thanks to "Fanda" and GDSC Shirpur for providing us the
         opportunity to develop
     </string>
+    <string name="history">History</string>
 
 </resources>

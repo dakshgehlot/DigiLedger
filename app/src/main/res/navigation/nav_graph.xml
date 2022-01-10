@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/transactionFragment">
     <fragment
         android:id="@+id/transactionFragment"
         android:name="com.example.digiledger.TransactionFragment"
@@ -50,34 +50,6 @@
         <action
             android:id="@+id/action_previousTransactionsFragment_to_transactionFragment"
             app:destination="@id/transactionFragment"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"/>
-    </fragment>
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.example.digiledger.MainFragment"
-        android:label="DigiLedger"
-        tools:layout="@layout/fragment_main">
-        <action
-            android:id="@+id/action_mainFragment_to_transactionFragment"
-            app:destination="@id/transactionFragment"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"/>
-
-        <action
-            android:id="@+id/action_mainFragment_to_previousTransactionsFragment"
-            app:destination="@id/previousTransactionsFragment"
-            app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left"
-            app:enterAnim="@anim/slide_in_left"
-            app:exitAnim="@anim/slide_out_right"/>
-        <action
-            android:id="@+id/action_mainFragment_to_aboutUs"
-            app:destination="@id/aboutUs"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:enterAnim="@anim/slide_in_right"

@@ -26,21 +26,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginEnd="0dp"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/akronim"
                 android:text="@string/the_codebreakers"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 android:textStyle="bold|italic" />
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="237dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/fanda_poster_rounded" />
+
             <TextView
                 android:id="@+id/textView2"
                 style="@style/Widget.DigiLedger.TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="68dp"
-                android:fontFamily="sans-serif-smallcaps"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/raleway"
                 android:justificationMode="inter_word"
                 android:paddingStart="30dp"
                 android:paddingEnd="30dp"
@@ -54,6 +63,7 @@
                 android:fontFamily="sans-serif-smallcaps"
                 android:justificationMode="inter_word"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
                 android:paddingStart="30dp"
                 android:paddingEnd="30dp"
                 android:text="@string/digiledger"
@@ -61,13 +71,6 @@
                 android:textSize="20sp"
                 android:textStyle="bold|italic" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="237dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="40dp"
-                app:srcCompat="@drawable/fanda_poster_rounded" />
         </LinearLayout>
     </ScrollView>
 

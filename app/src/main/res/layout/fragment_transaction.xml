@@ -151,7 +151,6 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="35dp"
-
                 app:layout_constraintBottom_toBottomOf="@id/rs_ten"
                 app:layout_constraintStart_toEndOf="@id/rs_ten"
                 app:layout_constraintTop_toTopOf="@id/rs_ten">

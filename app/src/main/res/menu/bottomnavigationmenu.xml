@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/previousTransactionsFragment"
+        android:title="@string/history"
+        android:icon="@drawable/ic_transaction_history"/>
+
+    <item
+        android:id="@+id/transactionFragment"
+        android:title="@string/new_transaction"
+        android:icon="@drawable/ic_rupee_symbol"
+        android:iconTint="@color/white"/>
+
+    <item
+        android:id="@+id/aboutUs"
+        android:title="@string/about_us"
+        android:icon="@drawable/icon_customer"
+        android:iconTint="@color/white"/>
+
+</menu>
