@@ -17,4 +17,12 @@
         <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
 
     </style>
+
+    <style name="SplashScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+    <item name="colorPrimary">@color/teal_primary</item>
+    <item name="colorPrimaryVariant">@color/teal_secondary</item>
+    <item name="colorOnPrimary">@color/white</item>
+
+    </style>
 </resources>
